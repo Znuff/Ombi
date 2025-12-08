@@ -133,6 +133,7 @@ namespace Ombi.DependencyInjection
             services.AddScoped<ICurrentUser, CurrentUser>(sp => new CurrentUser(sp.GetService<IHttpContextAccessor>()?.HttpContext?.User ?? null, sp.GetService<OmbiUserManager>()));
             services.AddHttpClient("OmbiClient", client =>
             {
+                client.Timeout = TimeSpan.FromMinutes(15);
                 client.DefaultRequestHeaders.Add("User-Agent", $"Ombi/{runtimeVersion} (https://ombi.io/)");
             }).ConfigurePrimaryHttpMessageHandler(() =>
             {
