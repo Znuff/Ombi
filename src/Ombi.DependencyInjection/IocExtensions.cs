@@ -73,6 +73,7 @@ using Ombi.Core.Services;
 using Ombi.Core.Helpers;
 using Ombi.Hubs;
 using Hqub.MusicBrainz.API;
+using System;
 
 namespace Ombi.DependencyInjection
 {
