@@ -133,7 +133,11 @@ namespace Ombi
             }
 
             await SortOutBaseUrl(baseUrl, settingsDb, ombiSettingsContent);
-            var httpClient = new HttpClient();
+            var httpClient = new HttpClient
+            {
+                Timeout = TimeSpan.FromMinutes(10)
+            };
+
                 var api = new Ombi.Api.Api(new Logger<Api.Api>(NullLoggerFactory.Instance), httpClient);
             await MigrateOldTvDbIds(ombiDb, ombiSettingsContent, settingsDb, new Ombi.Api.External.ExternalApis.TheMovieDb.TheMovieDbApi(null, (Api.IApi)api, null));
 
