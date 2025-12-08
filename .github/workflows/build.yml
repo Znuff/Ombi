@@ -142,7 +142,7 @@ jobs:
             ./src/Ombi/${{ matrix.os }}.${{ matrix.format }}
 
   release:
-    needs: [ publish, unit-test, versioning ]
+    needs: [ publish, versioning ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
