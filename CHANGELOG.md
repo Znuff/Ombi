@@ -1,4 +1,8 @@
-# 4.54.0 (2025-12-08)
+## [4.54.1](https://github.com/Znuff/Ombi/compare/v4.54.0...v4.54.1) (2025-12-08)
+
+
+
+# [4.54.0](https://github.com/Znuff/Ombi/compare/c57f33151bc07819bc950675f5a0a7978ba26348...v4.54.0) (2025-12-08)
 
 
 ### Bug Fixes
