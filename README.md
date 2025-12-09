@@ -165,10 +165,10 @@ Here are some of the features Ombi has:
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Berserkir-Wolf">
-            <img src="https://avatars.githubusercontent.com/u/15743201?v=4" width="50;" alt="Berserkir-Wolf"/>
+        <a href="https://github.com/mike10010100">
+            <img src="https://avatars.githubusercontent.com/u/3506604?v=4" width="50;" alt="mike10010100"/>
             <br />
-            <sub><b>Dyson Parkes</b></sub>
+            <sub><b>Michael Paulauski</b></sub>
         </a>
     </td>
     <td align="center">
@@ -179,10 +179,10 @@ Here are some of the features Ombi has:
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/mike10010100">
-            <img src="https://avatars.githubusercontent.com/u/3506604?v=4" width="50;" alt="mike10010100"/>
+        <a href="https://github.com/Berserkir-Wolf">
+            <img src="https://avatars.githubusercontent.com/u/15743201?v=4" width="50;" alt="Berserkir-Wolf"/>
             <br />
-            <sub><b>Michael Paulauski</b></sub>
+            <sub><b>Dyson Parkes</b></sub>
         </a>
     </td>
     <td align="center">
@@ -215,13 +215,6 @@ Here are some of the features Ombi has:
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/kitzin">
-            <img src="https://avatars.githubusercontent.com/u/3277321?v=4" width="50;" alt="kitzin"/>
-            <br />
-            <sub><b>Emil Kitti</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/grimsan55">
             <img src="https://avatars.githubusercontent.com/u/8499989?v=4" width="50;" alt="grimsan55"/>
             <br />
@@ -229,10 +222,10 @@ Here are some of the features Ombi has:
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/gtbuchanan">
-            <img src="https://avatars.githubusercontent.com/u/715687?v=4" width="50;" alt="gtbuchanan"/>
+        <a href="https://github.com/kitzin">
+            <img src="https://avatars.githubusercontent.com/u/3277321?v=4" width="50;" alt="kitzin"/>
             <br />
-            <sub><b>Taylor Buchanan</b></sub>
+            <sub><b>Emil Kitti</b></sub>
         </a>
     </td>
     <td align="center">
@@ -240,6 +233,13 @@ Here are some of the features Ombi has:
             <img src="https://avatars.githubusercontent.com/u/161589?v=4" width="50;" alt="shiitake"/>
             <br />
             <sub><b>Shannon Barrett</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/gtbuchanan">
+            <img src="https://avatars.githubusercontent.com/u/715687?v=4" width="50;" alt="gtbuchanan"/>
+            <br />
+            <sub><b>Taylor Buchanan</b></sub>
         </a>
     </td></tr>
 <tr>
