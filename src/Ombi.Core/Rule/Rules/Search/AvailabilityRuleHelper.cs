@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Ombi.Core.Models.Search;
+using Ombi.Helpers;
 using Ombi.Store.Entities;
 using Ombi.Store.Repository.Requests;
 
