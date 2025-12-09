@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +44,58 @@ namespace Ombi.Core.Rule.Rules.Search
                         search.FullyAvailable = true;
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Optimized batch check for all episodes of a TV show.
+        /// Fetches all episodes for the series once, then matches them in-memory instead of per-episode queries.
+        /// </summary>
+        public static async Task BatchEpisodeCheck(bool useImdb, IQueryable<IMediaServerEpisode> allEpisodes, 
+            List<SeasonRequests> seasonRequests, IMediaServerContent item, bool useTheMovieDb, bool useTvDb, ILogger log)
+        {
+            try
+            {
+                // Fetch all episodes for this series at once
+                IQueryable<IMediaServerEpisode> seriesEpisodes = null;
+
+                if (useImdb && item.ImdbId.HasValue())
+                {
+                    seriesEpisodes = allEpisodes.Where(x => x.Series.ImdbId == item.ImdbId);
+                }
+                else if (useTheMovieDb && item.TheMovieDbId.HasValue())
+                {
+                    seriesEpisodes = allEpisodes.Where(x => x.Series.TheMovieDbId == item.TheMovieDbId);
+                }
+                else if (useTvDb && item.TvDbId.HasValue())
+                {
+                    seriesEpisodes = allEpisodes.Where(x => x.Series.TvDbId == item.TvDbId);
+                }
+
+                if (seriesEpisodes != null)
+                {
+                    // Convert to list once to avoid multiple database calls
+                    var episodeList = await seriesEpisodes.ToListAsync();
+
+                    // Now check each episode against the in-memory list
+                    foreach (var season in seasonRequests)
+                    {
+                        foreach (var episode in season.Episodes)
+                        {
+                            var epExists = episodeList.FirstOrDefault(x =>
+                                x.EpisodeNumber == episode.EpisodeNumber && x.SeasonNumber == season.SeasonNumber);
+
+                            if (epExists != null)
+                            {
+                                episode.Available = true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                log.LogError(e, "Exception thrown when attempting to check if episodes are available");
             }
         }
 

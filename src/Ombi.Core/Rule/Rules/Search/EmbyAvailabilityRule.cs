@@ -103,13 +103,8 @@ namespace Ombi.Core.Rule.Rules.Search
                     if (search.SeasonRequests.Any())
                     {
                         var allEpisodes = EmbyContentRepository.GetAllEpisodes().Include(x => x.Series);
-                        foreach (var season in search.SeasonRequests)
-                        {
-                            foreach (var episode in season.Episodes)
-                            {
-                                await AvailabilityRuleHelper.SingleEpisodeCheck(useImdb, allEpisodes, episode, season, item, useTheMovieDb, useTvDb, Log);
-                            }
-                        }
+                        // Use batch check instead of per-episode queries
+                        await AvailabilityRuleHelper.BatchEpisodeCheck(useImdb, allEpisodes, search.SeasonRequests, item, useTheMovieDb, useTvDb, Log);
                     }
 
                     AvailabilityRuleHelper.CheckForUnairedEpisodes(search);
