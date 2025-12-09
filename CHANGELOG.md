@@ -1,3 +1,7 @@
+## [4.54.5](https://github.com/Znuff/Ombi/compare/v4.54.4...v4.54.5) (2025-12-09)
+
+
+
 ## [4.54.4](https://github.com/Znuff/Ombi/compare/v4.54.3...v4.54.4) (2025-12-09)
 
 
